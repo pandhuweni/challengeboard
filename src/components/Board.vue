@@ -94,9 +94,8 @@
 	.btn-small{
 		background-color: #4caf50 !important;
 		color: #fff;
-		line-height: 0px !important;
-		padding: 0px 12px !important;
-		font-size: 10px;
+		padding: 0px 16px !important;
+		font-size: 12px;
 		min-height: 0px !important;
 		min-width: 0px !important;
 	}
