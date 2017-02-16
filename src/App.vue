@@ -1,19 +1,18 @@
 <template>
   <div id="app">
     <Toolbar></Toolbar>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
-import Toolbar from './components/Toolbar'
-export default {
-  name: 'app',
-  components:{
-    Toolbar
-  }
-  
-}
+	import Toolbar from './components/Toolbar'
+	export default {
+	  name: 'app',
+	  components:{
+	    Toolbar
+	  }
+	}
 </script>
 
 <style>

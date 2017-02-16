@@ -1,6 +1,5 @@
 <template>
 	<div class="phone-viewport">
-
 		<md-whiteframe md-elevation="3">
 		  <md-toolbar>
 		    <md-button class="md-icon-button" @click="toggleLeftSidenav">
@@ -23,7 +22,7 @@
 		            <span>John Doe</span>
 		            <span>johndoe@email.com</span>
 		          </div> -->
-		          
+
 		          <md-avatar class="md-large">
 		            <img src="/static/account-circle.png">
 		          </md-avatar>
@@ -36,16 +35,16 @@
 		        </md-list-item>
 		      </md-list>
 		    </md-toolbar>
-	  
+
 	    <md-list>
-	      <md-list-item @click="$refs.sidebar.toggle()">
+	      <md-list-item @click="openBoard">
 	        <md-icon>home</md-icon> <span>Board</span>
 	      </md-list-item>
-	  
-	      <md-list-item @click="$refs.sidebar.toggle()">
+
+	      <md-list-item @click="openTrophyDeck">
 	        <md-icon>starts</md-icon> <span>Trophy Deck</span>
 	      </md-list-item>
-	  
+
 	      <md-list-item @click="$refs.sidebar.toggle()">
 	        <md-icon>power_settings_new</md-icon> <span>Logout</span>
 	      </md-list-item>
@@ -58,12 +57,19 @@
 export default {
   name: 'toolbar',
   components: {
-    
+
   },
    methods: {
     toggleLeftSidenav() {
       this.$refs.leftSidenav.toggle();
     },
+		openBoard(){
+			this.$refs.leftSidenav.toggle();
+			this.router.push({name: 'home'})
+		},
+		openTrophyDeck(){
+			this.$refs.leftSidenav.toggle();
+		},
     open(ref) {
       console.log('Opened: ' + ref);
     },
@@ -71,7 +77,7 @@ export default {
       console.log('Closed: ' + ref);
     }
   }
-}	
+}
 </script>
 <style scoped>
 .md-avatar{
@@ -79,6 +85,8 @@ export default {
 }
 .md-account-header{
 	background-image: url('/static/material-red.png')
-
+}
+.md-toolbar{
+	margin-bottom: 24px;
 }
 </style>

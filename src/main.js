@@ -4,7 +4,21 @@ import Vue from 'vue'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import App from './App'
+import Board from './components/Board'
+var VueRouter = require('vue-router')
 
+Vue.use(VueRouter)
+
+const routes = [
+  { path: '/', component: Board, name: 'home'}
+]
+
+const router = new VueRouter({
+  hashbang: false,
+  mode: 'history',
+  linkActiveClass: 'active',
+  routes // short for routes: routes
+})
 
 Vue.use(VueMaterial)
 
@@ -22,6 +36,7 @@ Vue.material.registerTheme({
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  router,
   template: '<App/>',
   components: { App }
 })
