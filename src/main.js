@@ -4,9 +4,10 @@ import Vue from 'vue'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import App from './App'
-import Board from './components/Board'
+import Board from './components/BoardLayout'
 var VueRouter = require('vue-router')
 
+Vue.use(VueMaterial)
 Vue.use(VueRouter)
 
 const routes = [
@@ -20,7 +21,6 @@ const router = new VueRouter({
   routes // short for routes: routes
 })
 
-Vue.use(VueMaterial)
 
 Vue.material.registerTheme({
   default: {

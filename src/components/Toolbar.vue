@@ -55,7 +55,7 @@
 <script>
 
 export default {
-  name: 'toolbar',
+  name: 'app-toolbar',
   components: {
 
   },

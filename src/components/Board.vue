@@ -1,5 +1,4 @@
 <template>
-	<md-layout md-align="center" md-gutter="24">
 	  <md-layout md-flex="40">
 		    <md-card md-with-hover>
 
@@ -9,8 +8,8 @@
 				      <img src="/static/propic.JPG" alt="People">
 				    </md-avatar>
 
-				    <div class="md-title">Title goes here</div>
-				    <div class="md-subhead">Subtitle here</div>
+				    <div class="md-title">{{title}}</div>
+				    <div class="md-subhead">{{subtitle}}</div>
 				  </md-card-header>
 
 				  <md-card-media md-ratio="16:9">
@@ -20,21 +19,21 @@
 					<md-card-header>
 
 			    <md-card-header-text>
-			      <div class="md-title">Challenge Title</div>
+			      <div class="md-title">{{title}}</div>
 
 							<md-layout md-align="left" md-gutter="24">
 								<md-layout md-flex="70">
-									<div class="md-subhead">Deadline date </div>
+									<div class="md-subhead">{{deadlineDate}}</div>
 								</md-layout>
 								<md-layout md-flex="30">
 						      <div class="md-subhead" >
 										<md-icon class="small-icon">check_circle</md-icon>
-										23 Enroll
+										{{enrolledCount}} Enroll
 									</div>
 								</md-layout>
 							</md-layout>
 							<br>
-							<h3 class="md-subheading">Rp 2,000,000.00</h3>
+							<h3 class="md-subheading">Rp {{prize}}</h3>
 			    </md-card-header-text>
 
 			  </md-card-header>
@@ -50,7 +49,7 @@
 						<md-layout md-flex="70">
 							<md-content>
 						  	<div class="md-subheading">Batas Enroll</div>
-								<div class="md-subhead">Subtitle here</div>
+								<div class="md-subhead">{{deadlineDate}}</div>
 							</md-content>
 						</md-layout>
 						<md-layout md-flex="30">
@@ -68,14 +67,11 @@
 				  </md-card-actions>
 				</md-card>
 		  </md-layout>
-	</md-layout>
 </template>
 <script>
 	export default {
 	  name: 'board',
-	  components:{
-
-	  }
+	  props: ['title', 'subtitle', 'deadlineDate', 'enrolledCount', 'prize', 'textPreview'],
 	}
 </script>
 <style scoped>

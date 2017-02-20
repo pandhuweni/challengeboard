@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <Toolbar></Toolbar>
+    <AppToolbar></AppToolbar>
     <router-view></router-view>
-    <Footer></Footer>
+    <AppFooter></AppFooter>
   </div>
 </template>
 
 <script>
-	import Toolbar from './components/Toolbar'
-	import Footer from './components/Footer'
+	import AppToolbar from './components/Toolbar'
+	import AppFooter from './components/Footer'
 	export default {
 	  name: 'app',
 	  components:{
-	    Toolbar, Footer
+	    AppToolbar, AppFooter
 	  }
 	}
 </script>
